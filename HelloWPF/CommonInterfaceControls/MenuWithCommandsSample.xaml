@@ -1,0 +1,30 @@
+﻿<Window x:Class="HelloWPF.CommonInterfaceControls.MenuWithCommandsSample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:HelloWPF.CommonInterfaceControls"
+        mc:Ignorable="d"
+        Title="MenuWithCommandsSample" Height="200" Width="300">
+
+    <Window.CommandBindings>
+        <CommandBinding Command="New" CanExecute="NewCommand_OnCanExecute" Executed="NewCommand_OnExecuted"></CommandBinding>
+    </Window.CommandBindings>
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Command="New" />
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Command="Cut" />
+                <MenuItem Command="Copy" />
+                <MenuItem Command="Paste" />
+            </MenuItem>
+        </Menu>
+
+        <TextBox AcceptsReturn="True" Name="TxtEditor" />
+    </DockPanel>
+</Window>

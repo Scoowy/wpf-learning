@@ -1,0 +1,36 @@
+﻿<Window x:Class="HelloWPF.MiscControls.WebBrowserControlSample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:HelloWPF.MiscControls"
+        mc:Ignorable="d"
+        Title="WebBrowserControlSample" Height="300" Width="450">
+
+    <Window.CommandBindings>
+        <CommandBinding Command="NavigationCommands.BrowseBack" CanExecute="BrowseBack_OnCanExecute"
+                        Executed="BrowseBack_OnExecuted" />
+        <CommandBinding Command="NavigationCommands.BrowseForward" CanExecute="BrowseForward_OnCanExecute"
+                        Executed="BrowseForward_OnExecuted" />
+        <CommandBinding Command="NavigationCommands.GoToPage" CanExecute="GoToPage_OnCanExecute"
+                        Executed="GoToPage_OnExecuted" />
+    </Window.CommandBindings>
+
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <Button Command="NavigationCommands.BrowseBack">
+                <Image Source="/HelloWPF;component/Images/back.png" Width="16" Height="16" />
+            </Button>
+            <Button Command="NavigationCommands.BrowseBack">
+                <Image Source="/HelloWPF;component/Images/forward.png" Width="16" Height="16" />
+            </Button>
+            <Separator />
+            <TextBox Name="TxtUrl" Width="300" KeyUp="TxtUrl_OnKeyUp" />
+            <Button Command="NavigationCommands.BrowseBack">
+                <Image Source="/HelloWPF;component/Images/search.png" Width="16" Height="16" />
+            </Button>
+        </ToolBar>
+
+        <WebBrowser Name="WbSample" Navigating="WbSample_OnNavigating" />
+    </DockPanel>
+</Window>

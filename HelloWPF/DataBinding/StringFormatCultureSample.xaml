@@ -1,0 +1,20 @@
+﻿<Window x:Class="HelloWPF.DataBinding.StringFormatCultureSample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:HelloWPF.DataBinding"
+        mc:Ignorable="d"
+        Title="StringFormatCultureSample" Height="120" Width="300">
+    <StackPanel Margin="10">
+        <TextBlock
+            Text="{Binding Source={x:Static sys:DateTime.Now}, ConverterCulture='de-DE', StringFormat=German date: {0:D}}" />
+        <TextBlock
+            Text="{Binding Source={x:Static sys:DateTime.Now}, ConverterCulture='en-US', StringFormat=American date: {0:D}}" />
+        <TextBlock
+            Text="{Binding Source={x:Static sys:DateTime.Now}, ConverterCulture='ja-JP', StringFormat=Japanese date: {0:D}}" />
+        <TextBlock
+            Text="{Binding Source={x:Static sys:DateTime.Now}, ConverterCulture='es-ES', StringFormat=European date: {0:D}}" />
+    </StackPanel>
+</Window>

@@ -1,0 +1,22 @@
+﻿<Window x:Class="HelloWPF.MiscControls.ExpanderControlSample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:HelloWPF.MiscControls"
+        mc:Ignorable="d"
+        Title="ExpanderControlSample" Height="300" Width="300">
+    <Grid>
+        <Expander Margin="10">
+            <Expander.Header>
+                <DockPanel VerticalAlignment="Stretch">
+                    <Image Source="/HelloWPF;component/Images/user.png" Height="16" DockPanel.Dock="Left" />
+                    <TextBlock FontStyle="Italic" Foreground="Green">Click to show/hide content...</TextBlock>
+                </DockPanel>
+            </Expander.Header>
+            <TextBlock TextWrapping="Wrap" FontSize="18">
+                Here we can have text which can be hidden/shown using the built-in functionality of the Expander control.
+            </TextBlock>
+        </Expander>
+    </Grid>
+</Window>

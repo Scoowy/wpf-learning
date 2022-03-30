@@ -1,0 +1,43 @@
+﻿<Window x:Class="HelloWPF.ListBoxControl.ListBoxSelectionSample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:HelloWPF.ListBoxControl"
+        mc:Ignorable="d"
+        Title="ListBoxSelectionSample" Height="250" Width="450">
+    <DockPanel Margin="10">
+        <StackPanel DockPanel.Dock="Right" Margin="10, 0">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="0, 0, 0, 5" />
+                </Style>
+            </StackPanel.Resources>
+
+            <TextBlock FontWeight="Bold" Margin="0, 0, 0, 10">ListBox selection</TextBlock>
+
+            <Button Name="BtnShowSelectedItem" Click="BtnShowSelectedItem_OnClick">Show selected</Button>
+            <Button Name="BtnSelectLast" Click="BtnSelectLast_OnClick">Select last</Button>
+            <Button Name="BtnSelectNext" Click="BtnSelectNext_OnClick">Select next</Button>
+            <Button Name="BtnSelectCSharp" Click="BtnSelectCSharp_OnClick">Select C#</Button>
+            <Button Name="BtnSelectAll" Click="BtnSelectAll_OnClick">Select all</Button>
+        </StackPanel>
+
+        <ListBox Name="LbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended"
+                 SelectionChanged="LbTodoList_OnSelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0, 2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{Binding Title}" />
+                        <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Completion}" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+</Window>

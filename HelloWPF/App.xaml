@@ -1,0 +1,17 @@
+﻿<Application x:Class="HelloWPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:HelloWPF"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             StartupUri="TreeViewControl/TreeViewMultipleTemplatesSample.xaml">
+
+    <Application.Resources>
+        <sys:String x:Key="StrApp">Hello, Application world!</sys:String>
+
+        <!-- Set the optimal view text in Flow Documents, this consume many CPU -->
+        <Style TargetType="FlowDocument">
+            <Setter Property="IsOptimalParagraphEnabled" Value="True" />
+            <Setter Property="IsHyphenationEnabled" Value="True" />
+        </Style>
+    </Application.Resources>
+</Application>

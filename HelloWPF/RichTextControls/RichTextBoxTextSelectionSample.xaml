@@ -1,0 +1,31 @@
+﻿<Window x:Class="HelloWPF.RichTextControls.RichTextBoxTextSelectionSample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:HelloWPF.RichTextControls"
+        mc:Ignorable="d"
+        Title="RichTextBoxTextSelectionSample" Height="300" Width="400">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="10, 5"></Setter>
+        </Style>
+    </Window.Resources>
+
+    <DockPanel>
+        <WrapPanel DockPanel.Dock="Top">
+            <Button Name="BtnGetText" Click="BtnGetText_OnClick">Get text</Button>
+            <Button Name="BtnSetText" Click="BtnSetText_OnClick">Set text</Button>
+            <Button Name="BtnGetSelectedText" Click="BtnGetSelectedText_OnClick">Get sel. text</Button>
+            <Button Name="BtnSetSelectedText" Click="BtnSetSelectedText_OnClick">Replace sel. text</Button>
+        </WrapPanel>
+        <TextBox DockPanel.Dock="Bottom" Name="TxtStatus" />
+        <RichTextBox Name="RtbEditor" SelectionChanged="RtbEditor_OnSelectionChanged">
+            <FlowDocument>
+                <Paragraph FontSize="36">Hello, world!</Paragraph>
+                <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="14" Foreground="Gray">Thanks to the RichTextBox control, this FlowDocument is completely editable!</Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+    </DockPanel>
+</Window>

@@ -1,0 +1,18 @@
+﻿<Window x:Class="HelloWPF.Commands.UsingCommandsSample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:HelloWPF.Commands"
+        mc:Ignorable="d"
+        Title="UsingCommandsSample" Height="100" Width="200">
+
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.New" Executed="NewCommand_OnExecuted"
+                        CanExecute="NewCommand_OnCanExecute" />
+    </Window.CommandBindings>
+
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Button Command="ApplicationCommands.New" Padding="10, 5">New</Button>
+    </StackPanel>
+</Window>

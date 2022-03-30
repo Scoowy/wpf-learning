@@ -1,0 +1,34 @@
+﻿<Window x:Class="HelloWPF.TreeViewControl.TreeViewMultipleTemplatesSample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:HelloWPF.TreeViewControl"
+        xmlns:model="clr-namespace:HelloWPF.Models"
+        mc:Ignorable="d"
+        Title="TreeViewMultipleTemplatesSample" Height="200" Width="250">
+    <Grid Margin="10">
+        <TreeView Name="TrvFamilies">
+            <TreeView.Resources>
+                <HierarchicalDataTemplate DataType="{x:Type model:Family}" ItemsSource="{Binding Members}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/HelloWPF;component/Images/user.png" Margin="0,0,5,0" />
+                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock Text=" [" Foreground="Blue" />
+                        <TextBlock Text="{Binding Members.Count}" Foreground="Blue" />
+                        <TextBlock Text="]" Foreground="Blue" />
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+                <DataTemplate DataType="{x:Type model:FamilyMember}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/HelloWPF;component/Images/new-file.png" Margin="0,0,5,0" />
+                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock Text=" (" Foreground="Green" />
+                        <TextBlock Text="{Binding Age}" Foreground="Green" />
+                        <TextBlock Text=" years)" Foreground="Green" />
+                    </StackPanel>
+                </DataTemplate>
+            </TreeView.Resources>
+        </TreeView>
+    </Grid>
+</Window>

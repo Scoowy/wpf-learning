@@ -1,0 +1,22 @@
+﻿<Window x:Class="HelloWPF.CommonInterfaceControls.ContextMenuManuallyInvokedSample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:HelloWPF.CommonInterfaceControls"
+        mc:Ignorable="d"
+        Title="ContextMenuManuallyInvokedSample" Height="250" Width="250">
+
+    <Window.Resources>
+        <ContextMenu x:Key="CtxMenu">
+            <MenuItem Header="Menu item 1" />
+            <MenuItem Header="Menu item 2" />
+            <Separator />
+            <MenuItem Header="Menu item 3" />
+        </ContextMenu>
+    </Window.Resources>
+
+    <Grid>
+        <Button Content="Click me!" VerticalAlignment="Center" HorizontalAlignment="Center" Click="Button_OnClick" />
+    </Grid>
+</Window>
